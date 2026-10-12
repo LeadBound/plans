@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LeadBound · מסלולי כניסה</title>
+<meta name="description" content="מייל, לינקדאין או שניהם. אנחנו מאתרים, כותבים ושולחים, ואתם עונים. החל מ-600 ₪ לחודש.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://plans.the-leadbound.com/">
+<meta property="og:title" content="LeadBound · מסלולי כניסה">
+<meta property="og:description" content="מייל, לינקדאין או שניהם. אנחנו מאתרים, כותבים ושולחים, ואתם עונים. החל מ-600 ₪ לחודש.">
+<meta property="og:image" content="https://plans.the-leadbound.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Inter:wght@500;600;700;800&display=swap">
+<style>
+  /* Layout: one A4 sheet. Radar hero, three promises, a five-step track,
+     three price columns with the combined one raised in the middle, proof + upsell, contact band. */
+  :root {
+    --ground: #060a13;
+    --sheet: #0b1220;
+    --panel: #121b2d;
+    --line: #26324d;
+    --white: #f9fafb;
+    --text: #cdd8e8;
+    --muted: #94a0b4;
+    --faint: #5b6780;
+    --cyan: #22d3ee;
+    --cyan-ink: #04222b;
+    --cyan-soft: rgba(34, 211, 238, .12);
+    --cyan-line: rgba(34, 211, 238, .22);
+    --amber: #f59e0b;
+    --amber-soft: rgba(245, 158, 11, .10);
+    --he: "Alef", "Assistant", "Heebo", "Arial Hebrew", system-ui, sans-serif;
+    --num: "Inter", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: dark;
+  }
+
+  body { background: var(--ground); color: var(--text); padding-inline: 16px; padding-block: 24px; }
+
+  .sheet {
+    max-width: 210mm; margin: 0 auto; background: var(--sheet);
+    border-radius: 18px; overflow: hidden; position: relative;
+    display: flex; flex-direction: column; gap: 17px;
+    padding: 28px 36px 0;
+    font-family: var(--he); font-size: 13px; line-height: 1.5; color: var(--text);
+  }
+  .n { font-family: var(--num); font-variant-numeric: tabular-nums; }
+
+  /* ---------- top bar ---------- */
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .logo { height: 24px; width: auto; display: block; }
+  .chip {
+    font-size: 12px; color: var(--cyan); letter-spacing: .04em;
+    border: 1px solid var(--cyan-line); background: var(--cyan-soft);
+    padding: 3px 12px; border-radius: 99px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero { display: grid; grid-template-columns: 1fr 200px; gap: 20px; align-items: center; }
+  .hero-copy { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+  h1 {
+    margin: 0; color: var(--white); font-weight: 700;
+    font-size: 36px; line-height: 1.15; letter-spacing: -.01em; text-wrap: balance;
+  }
+  h1 .accent { color: var(--cyan); }
+  h1 .l1 { white-space: nowrap; }
+  .lede { margin: 0; font-size: 15.5px; color: var(--text); }
+  .from { display: flex; align-items: baseline; gap: 8px; margin-top: 4px; }
+  .from .lbl { font-size: 15px; color: var(--muted); }
+  .from .big { font-size: 46px; font-weight: 800; color: var(--white); line-height: 1; letter-spacing: -.02em; }
+  .from .cur { font-family: var(--he); font-size: 30px; font-weight: 700; color: var(--white); }
+  .from .per { font-size: 14px; color: var(--muted); }
+
+  .radar { position: relative; width: 200px; height: 200px; }
+  .radar::before {
+    content: ""; position: absolute; inset: -10%;
+    background: radial-gradient(circle at 50% 50%, rgba(34, 211, 238, .16), transparent 62%);
+  }
+  .radar svg { position: relative; width: 100%; height: 100%; display: block; overflow: visible; }
+  .sweep { transform-origin: 120px 120px; animation: sweep 9s linear infinite; }
+  @keyframes sweep { to { transform: rotate(360deg); } }
+  .tag {
+    position: absolute; transform: translate(-50%, -50%);
+    font-size: 11px; line-height: 1; white-space: nowrap; color: var(--white);
+    background: var(--panel); border: 1px solid var(--cyan-line);
+    padding: 4px 8px; border-radius: 99px;
+  }
+
+  /* ---------- section label ---------- */
+  .label { font-size: 12px; color: var(--cyan); letter-spacing: .06em; margin: 0 0 10px; }
+
+  /* ---------- promises ---------- */
+  .promises { display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--line); }
+  .promise { display: flex; gap: 10px; padding: 12px 14px; min-width: 0; }
+  .promise + .promise { border-inline-start: 1px solid var(--line); }
+  .promise:first-child { padding-inline-start: 0; }
+  .promise:last-child { padding-inline-end: 0; }
+  .promise svg { flex: none; width: 22px; height: 22px; stroke: var(--cyan); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; margin-top: 1px; }
+  .promise h3 { margin: 0 0 2px; font-size: 14.5px; color: var(--white); }
+  .promise p { margin: 0; font-size: 12.5px; color: var(--muted); }
+
+  /* ---------- steps ---------- */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; position: relative; }
+  .steps::before {
+    content: ""; position: absolute; top: 13px; inset-inline: 10% 10%;
+    border-top: 1px dashed var(--cyan-line);
+  }
+  .step { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; min-width: 0; }
+  .dot {
+    width: 27px; height: 27px; border-radius: 50%; display: grid; place-items: center;
+    font-family: var(--num); font-size: 12px; font-weight: 700; color: var(--cyan);
+    background: var(--sheet); border: 1px solid var(--cyan);
+  }
+  .step:last-child .dot { background: var(--cyan); color: var(--cyan-ink); box-shadow: 0 0 0 5px var(--cyan-soft); }
+  .step h4 { margin: 4px 0 0; font-size: 14px; color: var(--white); }
+  .step p { margin: 0; font-size: 12px; color: var(--muted); line-height: 1.45; }
+
+  /* ---------- plans ---------- */
+  .plans { display: grid; grid-template-columns: 1fr 1.1fr 1fr; gap: 12px; align-items: end; }
+  .plan {
+    position: relative; min-width: 0; display: flex; flex-direction: column; gap: 10px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    padding: 16px 16px 14px;
+  }
+  .plan.featured {
+    border-color: var(--cyan); padding-top: 26px;
+    background: linear-gradient(180deg, rgba(34, 211, 238, .10), var(--panel) 55%);
+    box-shadow: 0 0 0 4px var(--cyan-soft);
+  }
+  .badge {
+    position: absolute; top: 0; inset-inline-start: 50%; transform: translate(50%, -50%);
+    background: var(--cyan); color: var(--cyan-ink); font-weight: 700; font-size: 12px;
+    padding: 3px 12px; border-radius: 99px; white-space: nowrap;
+  }
+  .plan h3 { margin: 0; font-size: 16px; color: var(--white); }
+  .price { display: flex; align-items: baseline; gap: 6px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  .price .big { font-size: 34px; font-weight: 800; color: var(--white); line-height: 1; letter-spacing: -.02em; }
+  .price .cur { font-family: var(--he); font-size: 24px; font-weight: 700; color: var(--white); }
+  .price .per { font-size: 13px; color: var(--muted); }
+  .plan ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+  .plan li { display: flex; gap: 9px; align-items: flex-start; font-size: 12.5px; color: var(--text); }
+  .plan li::before {
+    content: ""; flex: none; width: 5px; height: 9px; margin-top: 4px; margin-inline: 3px 2px;
+    border: solid var(--cyan); border-width: 0 2px 2px 0; transform: rotate(45deg);
+  }
+  .plan li strong { color: var(--white); font-weight: 700; }
+
+  .notes { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--muted); margin-top: -8px; }
+  .notes b { color: var(--text); font-weight: 700; }
+
+  /* ---------- proof + upsell ---------- */
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .box { border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+  .box .label { margin: 0; }
+  .box p { margin: 0; }
+  .upsell { flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 18px; }
+  .upsell .label { margin-bottom: 2px; }
+  .upsell h3 { margin: 0; font-size: 15px; color: var(--white); }
+  .upsell p { color: var(--muted); font-size: 12.5px; }
+
+  /* ---------- contact band ---------- */
+  .band {
+    margin: auto -36px 0; padding: 16px 36px;
+    background: linear-gradient(90deg, rgba(34, 211, 238, .14), rgba(34, 211, 238, .04));
+    border-top: 1px solid var(--cyan-line);
+    display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  }
+  .band h2 { margin: 0; font-size: 22px; color: var(--white); line-height: 1.2; }
+  .band p { margin: 2px 0 0; color: var(--text); font-size: 13px; }
+  .contact { display: flex; flex-direction: column; align-items: center; gap: 7px; flex: none; }
+  .wa {
+    display: flex; align-items: center; gap: 9px; text-decoration: none;
+    background: var(--cyan); color: var(--cyan-ink); font-weight: 700; font-size: 14.5px;
+    padding: 9px 18px; border-radius: 99px;
+  }
+  .wa:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+  .wa svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .meta { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--muted); }
+  .meta .num { font-family: var(--num); font-weight: 600; color: var(--white); direction: ltr; unicode-bidi: isolate; }
+  .meta .site { font-family: var(--num); font-weight: 600; color: var(--cyan); direction: ltr; unicode-bidi: isolate; }
+
+  /* ---------- placeholders: visible on purpose, never ships filled-looking ---------- */
+  .ph {
+    color: var(--amber); background: var(--amber-soft);
+    border: 1px dashed var(--amber); border-radius: 6px;
+    padding: 0 6px; font-size: .92em; white-space: nowrap;
+  }
+  .ph-block {
+    color: var(--amber); background: var(--amber-soft);
+    border: 1px dashed var(--amber); border-radius: 10px; padding: 8px 10px; font-size: 12.5px;
+  }
+
+  /* ---------- print: exactly one A4 page ---------- */
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { padding: 0; background: var(--sheet); }
+    .sheet { width: 210mm; height: 297mm; max-width: none; border-radius: 0; justify-content: space-between; gap: 0; }
+    .band { margin-top: 0; }
+    .sweep { animation: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  @media (prefers-reduced-motion: reduce) { .sweep { animation: none; } }
+
+  /* ---------- phone ---------- */
+  @media screen and (max-width: 700px) {
+    .sheet { padding: 22px 18px 0; gap: 20px; }
+    .hero { grid-template-columns: 1fr; }
+    .radar { width: 190px; height: 190px; margin-inline: auto; order: -1; }
+    h1 { font-size: 31px; }
+    h1 .l1 { white-space: normal; }
+    .promises { grid-template-columns: 1fr; }
+    .promise, .promise:first-child, .promise:last-child { padding-inline: 0; }
+    .promise + .promise { border-inline-start: 0; border-top: 1px solid var(--line); }
+    .steps { grid-template-columns: 1fr; gap: 12px; }
+    .steps::before { display: none; }
+    .step { flex-direction: row; text-align: start; align-items: flex-start; gap: 12px; }
+    .step h4 { margin: 2px 0 0; min-width: 84px; }
+    .plans { grid-template-columns: 1fr; gap: 22px; }
+    .upsell { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .band { margin-inline: -18px; padding: 18px; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet" dir="rtl" lang="he">
+
+  <header class="top">
+    <img class="logo" src="logo-white.png" alt="LeadBound">
+    <span class="chip">מסלולי כניסה</span>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <h1><span class="l1">אנחנו מאתרים, כותבים ושולחים.</span><br><span class="accent">אתם עונים.</span></h1>
+      <p class="lede">פניות אישיות ללקוחות שמתאימים לכם, מהמייל ומהלינקדאין שלכם.</p>
+      <div class="from">
+        <span class="lbl">החל מ-</span>
+        <span class="big n">600</span><span class="cur">₪</span>
+        <span class="per">לחודש, לפני מע״מ</span>
+      </div>
+    </div>
+
+    <div class="radar" aria-hidden="true">
+      <svg viewBox="0 0 240 240">
+        <defs>
+          <linearGradient id="sw" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#22d3ee" stop-opacity="0"/>
+            <stop offset="1" stop-color="#22d3ee" stop-opacity=".32"/>
+          </linearGradient>
+        </defs>
+        <circle cx="120" cy="120" r="115" fill="none" stroke="#26324d" stroke-width="1" stroke-dasharray="3 5"/>
+        <circle cx="120" cy="120" r="88" fill="none" stroke="#26324d" stroke-width="1"/>
+        <circle cx="120" cy="120" r="64" fill="none" stroke="#26324d" stroke-width="1"/>
+        <g class="sweep">
+          <path d="M120 120 L120 5 A115 115 0 0 1 208.1 46.1 Z" fill="url(#sw)"/>
+          <line x1="120" y1="120" x2="208.1" y2="46.1" stroke="#22d3ee" stroke-opacity=".6" stroke-width="1.2"/>
+        </g>
+        <!-- the logo's own mark: a dot inside two broken rings -->
+        <path d="M94 105 A30 30 0 0 1 146 105 M146 135 A30 30 0 0 1 94 135" fill="none" stroke="#22d3ee" stroke-width="6" stroke-linecap="butt"/>
+        <path d="M80.2 97 A46 46 0 0 1 159.8 97 M159.8 143 A46 46 0 0 1 80.2 143" fill="none" stroke="#22d3ee" stroke-width="6" stroke-linecap="butt" stroke-opacity=".55"/>
+        <circle cx="120" cy="120" r="14" fill="#22d3ee"/>
+        <!-- faint contacts -->
+        <circle cx="67.5" cy="29" r="2.6" fill="#5b6780"/>
+        <circle cx="132" cy="196" r="2.6" fill="#5b6780"/>
+        <circle cx="30" cy="112" r="2.6" fill="#5b6780"/>
+        <circle cx="196" cy="186" r="2.6" fill="#5b6780"/>
+        <circle cx="222" cy="98" r="2.6" fill="#5b6780"/>
+        <!-- contacts showing a signal -->
+        <circle cx="164" cy="44" r="9" fill="#22d3ee" fill-opacity=".16"/>
+        <circle cx="164" cy="44" r="4" fill="#22d3ee"/>
+        <circle cx="214" cy="154" r="9" fill="#22d3ee" fill-opacity=".16"/>
+        <circle cx="214" cy="154" r="4" fill="#22d3ee"/>
+        <circle cx="48" cy="166" r="9" fill="#22d3ee" fill-opacity=".16"/>
+        <circle cx="48" cy="166" r="4" fill="#22d3ee"/>
+      </svg>
+      <span class="tag" style="left:72%;top:7%">מגייסת</span>
+      <span class="tag" style="left:87%;top:76%">מתרחבת</span>
+      <span class="tag" style="left:19%;top:81%">מפרסמת</span>
+    </div>
+  </section>
+
+  <section class="promises">
+    <div class="promise">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>
+      <div>
+        <h3>יוצא בשם שלכם</h3>
+        <p>כל פנייה נשלחת מהתיבה ומהפרופיל שלכם. מי שמקבל אותה רואה אתכם, לא חברת שיווק.</p>
+      </div>
+    </div>
+    <div class="promise">
+      <svg viewBox="0 0 24 24"><path d="M10 8 5 12.5l5 4.5"/><path d="M5.5 12.5H14a5 5 0 0 1 5 5V19"/></svg>
+      <div>
+        <h3>התגובות מגיעות אליכם</h3>
+        <p>ישר לתיבה ולהודעות בלינקדאין. אין מערכת חדשה ללמוד.</p>
+      </div>
+    </div>
+    <div class="promise">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.3 2.7 2.7L16 9.6"/></svg>
+      <div>
+        <h3>שום דבר לא יוצא בלי אישור</h3>
+        <p>לפני ההפעלה תקבלו דוגמאות של ההודעות, ומתחילים רק אחרי שאישרתם.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">איך זה עובד</p>
+    <ol class="steps">
+      <li class="step"><span class="dot">1</span><h4>שאלון וחיבור</h4><p>ממלאים שאלון קצר ומחברים את המייל או הלינקדאין.</p></li>
+      <li class="step"><span class="dot">2</span><h4>איתור</h4><p>מוצאים חברות עם סימן שהן צריכות אתכם עכשיו, ואת מקבלי ההחלטות.</p></li>
+      <li class="step"><span class="dot">3</span><h4>אימות</h4><p>בודקים כל כתובת לפני שליחה, כדי לשמור על התיבה שלכם.</p></li>
+      <li class="step"><span class="dot">4</span><h4>ניסוח</h4><p>כותבים הודעה שמותאמת לשירות שלכם ושולחים לכם לאישור.</p></li>
+      <li class="step"><span class="dot">5</span><h4>הפעלה</h4><p>הפניות יוצאות בימים א׳ עד ה׳, ואתם עונים למי שמתעניין.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="label">המסלולים</p>
+    <div class="plans">
+      <article class="plan">
+        <h3>מייל</h3>
+        <div class="price"><span class="big n">600</span><span class="cur">₪</span><span class="per">לחודש</span></div>
+        <ul>
+          <li><span><strong class="n">10-15</strong> מיילים אישיים ביום</span></li>
+          <li><span><strong class="n">220-330</strong> אנשים חדשים בחודש</span></li>
+          <li><span>נשלח מהתיבה שלכם</span></li>
+        </ul>
+      </article>
+
+      <article class="plan featured">
+        <span class="badge">חוסכים <span class="n">200</span> ₪ בחודש</span>
+        <h3>משולב</h3>
+        <div class="price"><span class="big n">1,400</span><span class="cur">₪</span><span class="per">לחודש</span></div>
+        <ul>
+          <li><span>כל מה שבמסלול המייל</span></li>
+          <li><span>כל מה שבמסלול הלינקדאין</span></li>
+          <li><span>שאלון ואישור אחד לשני הערוצים</span></li>
+        </ul>
+      </article>
+
+      <article class="plan">
+        <h3>לינקדאין</h3>
+        <div class="price"><span class="big n">1,000</span><span class="cur">₪</span><span class="per">לחודש</span></div>
+        <ul>
+          <li><span><strong class="n">25</strong> בקשות חיבור ביום</span></li>
+          <li><span>עד <strong class="n">40</strong> הודעות ביום למי שאישר</span></li>
+          <li><span>נשלח מהפרופיל שלכם</span></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <div class="notes">
+    <span><b>בכל מסלול:</b> איתור לפי סימנים · אימות כתובות · ניסוח מותאם · דוגמאות לאישור · סיכום חודשי</span>
+    <span>המחירים לפני מע״מ · בלי דמי הקמה · בלי התחייבות</span>
+  </div>
+
+  <section class="box upsell">
+    <div>
+      <p class="label">רוצים יותר?</p>
+      <h3>שנענה ונקבע את הפגישות בשבילכם</h3>
+    </div>
+    <p>יש גם מסלול מנוהל מלא. נשמח לספר עליו בשיחה.</p>
+  </section>
+
+  <footer class="band">
+    <div>
+      <h2>רוצים להתחיל?</h2>
+      <p>שיחת היכרות קצרה, ומשם ישר לשאלון.</p>
+    </div>
+    <div class="contact">
+      <a class="wa" target="_blank" rel="noopener" href="https://wa.me/972542881779?text=%D7%94%D7%99%D7%99%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%9E%D7%A1%D7%9C%D7%95%D7%9C%D7%99%20%D7%94%D7%9B%D7%A0%D7%99%D7%A1%D7%94%20%D7%A9%D7%9C%20LeadBound%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%95%D7%93">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 19.5 5.6 16A7.8 7.8 0 1 1 8.4 18.6Z"/><path d="M9.2 9.3c.3 1.9 1.6 3.4 3.6 4.4l1.3-.9 1.6.8"/></svg>
+        <span>שלחו לנו הודעה בוואטסאפ</span>
+      </a>
+      <div class="meta"><span class="num">054-288-1779</span><span class="sep">·</span><span class="site">the-leadbound.com</span></div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
